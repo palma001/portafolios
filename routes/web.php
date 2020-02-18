@@ -11,16 +11,8 @@
 |
 */
 
+Auth::routes();
 
-Route::get('/','HomeController@index');
-Route::resource('usuarios','PagesController')->middleware('edad');
-Route::resource('posts','PostsController');
-Route::resource('contact','contactController');
-
-Route::get('/home', function(){
-    return 'Si ves esta página eres mayor de edad';
-})->middleware('edad');
-
-Route::get('/auth.login', function(){
-    return 'Formulario para iniciar sesion';
-})->name('auth.login');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
