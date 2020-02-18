@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12 col-md-12">
-	    <button type="button" rel="tooltip" title="Remove" class="btn btn-primary">
+	    <button type="button" rel="tooltip" title="Agregar Usuario" class="btn btn-primary">
 	        Agregar Usuario
 	    </button>
     <div class="card">
