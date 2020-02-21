@@ -1,14 +1,3 @@
-<!--
-=========================================================
-Material Dashboard - v2.1.2
-=========================================================
-
-Product Page: https://www.creative-tim.com/product/material-dashboard
-Copyright 2020 Creative Tim (https://www.creative-tim.com)
-Coded by Creative Tim
-
-=========================================================
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,35 +20,33 @@ The above copyright notice and this permission notice shall be included in all c
 </head>
 
 <body class="">
-    <div class="main-panel">
-      <div class="content">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-md-8">
-              <div class="card">
-                <div class="card-header card-header-primary">
-                  <h4 class="card-title">Login</h4>
-                </div>
-                <div class="card-body">
-                  <form method="POST" action="{{ route('login') }}">
-                    @csrf
-                    <div class="row">
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Email</label>
-                          <input type="email" name="email" class="form-control">
-                        </div>
-                      </div>
-                      <div class="col-md-12">
-                        <div class="form-group">
-                          <label class="bmd-label-floating">Password</label>
-                          <input type="password" name="password" class="form-control">
-                        </div>
+    <div class="content" style="margin-top: 200px;">
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class="col-sm-12 col-md-8 col-xl-4">
+            <div class="card">
+              <div class="card-header card-header-primary">
+                <h4 class="card-title">Login</h4>
+              </div>
+              <div class="card-body">
+                <form method="POST" action="{{ route('login') }}">
+                  @csrf
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Email</label>
+                        <input type="email" name="email" class="form-control">
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary pull-right">Login</button>
-                  </form>
-                </div>
+                    <div class="col-md-12">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Password</label>
+                        <input type="password" name="password" class="form-control">
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-primary pull-right">Login</button>
+                </form>
               </div>
             </div>
           </div>
