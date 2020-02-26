@@ -36,10 +36,12 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
+        $image = $request->file('avatar')->store('public');
         $equipments = new Equipment;
         $equipments->name = $request->name;
         $equipments->lastname = $request->lastname;
         $equipments->email = $request->email;
+        $equipments->image = $image;
         $equipments->description = $request->description;
         $equipments->user_created_id = auth()->user()->id;
         $equipments->save();

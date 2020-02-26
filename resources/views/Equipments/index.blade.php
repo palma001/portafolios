@@ -3,9 +3,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12 col-md-12">
-	    <a href="{{route('equipment.create')}}" rel="tooltip" title="Agregar Usuario" class="btn btn-primary text-white">
+	    <a href="{{route('equipment.create')}}" rel="tooltip" title="Agregar Usuario" class="btn btn-primary text-white" style="float: right;">
 	        Agregar Equipo
 	    </a>
+	</div>
     <div class="card">
         <div class="card-header card-header-tabs card-header-primary">
           <div class="nav-tabs-navigation">
@@ -20,6 +21,7 @@
 			    <table class="table">
 			      	<thead class="text-warning">
 			          <th>ID</th>
+			          <th>Avatar</th>
 			          <th>Nombre</th>
 			          <th>Apellido</th>
 			          <th>Email</th>
@@ -30,6 +32,10 @@
 			              <tr>
 			                <td class="td-actions text-right">
 			                  {{$equipment->id}}
+			                </td>
+			                <td>
+			                	<img class="avatars" src="{{Storage::url($equipment->image)}}" alt="image"
+			                	style="width: 50px; height: 50px; border-radius: 100%;">
 			                </td>
 			                <td>{{$equipment->name}}</td>
 			                <td>{{$equipment->lastname}}</td>
