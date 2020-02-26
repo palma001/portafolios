@@ -23,4 +23,6 @@ Route::prefix('dashboard')->group(function () {
 	Route::get('/equipment', 'EquipmentController@index')->name('equipment');
 	Route::resource('setting','SettingController');
 	Route::get('settings', 'SettingController@index')->name('settings');
+	Route::resource('newsletter','NewsletterController');
+	Route::get('newsletters', 'NewsletterController@index')->name('newsletters');
 });

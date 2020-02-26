@@ -73,6 +73,12 @@ The above copyright notice and this permission notice shall be included in all c
             <p>Configuración</p>
           </a>
         </li>
+        <li class="nav-item {{ Request::is('dashboard/newsletters') ? 'active' : '' }}">
+          <a class="nav-link" href="{{route('newsletters')}}">
+            <i class="material-icons">group</i>
+            <p>Newsletters</p>
+          </a>
+        </li>
 {{--                 <li class="nav-item ">
           <a class="nav-link" href="./icons.html">
             <i class="material-icons">bubble_chart</i>

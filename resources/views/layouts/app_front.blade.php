@@ -115,6 +115,12 @@
 							</li>
 						</ul>
 					</section>
+					<section>
+						<form method="post" action="{{route('newsletter.store')}}">
+							@csrf
+							<input type="text" name="newsletter" placeholder="Suscribirse..."/>
+						</form>
+					</section>
 				<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>
