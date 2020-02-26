@@ -2,7 +2,13 @@
 @section('content')
 <div class="container-fluid">
     @if (session()->has('status'))
-        <div class="alert alert-sucess">{{session('status')}}</div>    
+      <div class="alert alert-success" style="width: 95%">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <i class="material-icons">close</i>
+        </button>
+        <span>
+          <b> Exito - </b> {{session('status')}}</span>
+      </div>
     @endif
     <div class="row">
         <div class="col-md-12">

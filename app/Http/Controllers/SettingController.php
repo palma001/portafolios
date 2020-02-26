@@ -89,7 +89,7 @@ class SettingController extends Controller
             'email' => $request->email,
             'address' => $request->address,
         ]);
-        return redirect('settings');
+        return redirect('/dashboard/settings')->with('status', 'Configuración modificada correctamente!');
     }
 
     /**

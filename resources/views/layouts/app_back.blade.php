@@ -51,19 +51,23 @@ The above copyright notice and this permission notice shall be included in all c
               <p>Dashboard</p>
             </a>
           </li> 
-         <li class="nav-item {{Request::is('users') ? 'active' : ''}}">
+          <li class="nav-item {{
+              (Request::is('dashboard/users') || (Request::is('dashboard/users/create'))) ? 'active' : ''
+            }}">
             <a class="nav-link" href="{{route('users')}}">
               <i class="material-icons">person</i>
               <p>Usuarios</p>
             </a>
         </li>
-        <li class="nav-item {{Request::is('equipment') ? 'active' : ''}}">
+        <li class="nav-item {{
+            (Request::is('dashboard/equipment') || Request::is('dashboard/equipment/create')) ? 'active' : ''
+          }}">
             <a class="nav-link" href="{{ route('equipment') }}">
               <i class="material-icons">content_paste</i>
               <p>Equipo de Trabajo</p>
             </a>
         </li>
-        <li class="nav-item ">
+        <li class="nav-item {{ Request::is('dashboard/settings') ? 'active' : '' }}">
           <a class="nav-link" href="{{route('settings')}}">
             <i class="material-icons">library_books</i>
             <p>Configuración</p>
