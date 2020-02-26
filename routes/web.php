@@ -11,17 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::resource('usuarios','PagesController')->middleware('edad');
-Route::resource('posts','PostsController');
-Route::resource('contact','contactController');
+Auth::routes();
 
-Route::get('/home', function(){
-    return 'Si ves esta página eres mayor de edad';
-})->middleware('edad');
-
-Route::get('/auth.login', function(){
-    return 'Formulario para iniciar sesion';
-})->name('auth.login');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
+Route::get('/users', 'UsersController@index')->name('users');
+Route::resource('equipment','EquipmentController');
+Route::get('/equipment', 'EquipmentController@index')->name('equipment');
