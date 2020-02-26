@@ -15,7 +15,12 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/dashboard', 'HomeController@dashboard')->name('dashboard');
-Route::get('/users', 'UsersController@index')->name('users');
-Route::resource('equipment','EquipmentController');
-Route::get('/equipment', 'EquipmentController@index')->name('equipment');
+
+Route::prefix('dashboard')->group(function () {
+	Route::get('/', 'HomeController@dashboard')->name('dashboard');
+	Route::get('/users', 'UsersController@index')->name('users');
+	Route::resource('equipment','EquipmentController');
+	Route::get('/equipment', 'EquipmentController@index')->name('equipment');
+	Route::resource('setting','SettingController');
+	Route::get('settings', 'SettingController@index')->name('settings');
+});

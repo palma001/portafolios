@@ -1,19 +1,35 @@
 @extends('layouts.app_front')
+@section('title', $setting->header_title)
+@section('favicon', Storage::url($setting->favicon))
+@section('facebook', $setting->facebook_link)
+@section('twitter', $setting->twitter_link)
+@section('instagram', $setting->instagram_link)
+@section('phone', $setting->phone)
+@section('email', $setting->email)
+@section('address', $setting->address)
 @section('content')
     <section id="banner">
         <div class="content">
             <header>
-                <h1>Hi, I’m Editorial<br />
-                by HTML5 UP</h1>
-                <p>A free and fully responsive site template</p>
+                <h1>
+                    {{
+                        $setting->title_page
+                    }}
+                </h1>
+                <p>
+                    {{
+                        $setting->subtitle_page
+                    }}
+                </p>
             </header>
-            <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
-            <ul class="actions">
-                <li><a href="#" class="button big">Learn More</a></li>
-            </ul>
+            <p>
+                {{
+                    $setting->description_page
+                }}
+            </p>
         </div>
         <span class="image object">
-            <img src="images/pic10.jpg" alt="" />
+            <img src="{{ Storage::url($setting->image_page)}}" alt="" style="max-height: 400px;" />
         </span>
     </section>
 
@@ -63,7 +79,7 @@
             @foreach($equipments as $equipment)
                 <article>
                     <a href="#" class="image">
-                        <img src="{{Storage::url($equipment->image)}}" alt="" style="width: 350px; height: 350px; border-radius: 100%;" />
+                        <img src="{{Storage::url($equipment->image)}}" alt="" style="width: 320px; height: 320px; border-radius: 100%; margin: auto" />
                     </a>
                     <h3>{{ strtoupper($equipment->name) }} {{ strtoupper($equipment->lastname) }}</h3>
                     <p>{{ $equipment->description }}</p>

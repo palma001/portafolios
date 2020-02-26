@@ -6,10 +6,11 @@
 -->
 <html>
 	<head>
-		<title>Editorial by HTML5 UP</title>
+		<title>@yield('title')</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets_front/css/main.css" />
+		<link rel="icon" href="@yield('favicon')" type="image/x-icon"/>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -19,13 +20,10 @@
 				<div class="inner">
 					<!-- Header -->
 					<header id="header">
-						<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
 						<ul class="icons">
-							<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-							<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-							<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+							<li><a href="@yield('twitter')" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="@yield('facebook')" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+							<li><a href="@yield('instagram')" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 						</ul>
 					</header>
 					@yield('content')
@@ -48,8 +46,8 @@
 								<h2>Menu</h2>
 							</header>
 							<ul>
-								<li><a href="index.html">Homepage</a></li>
-								<li><a href="generic.html">Generic</a></li>
+								<li><a href="{{route('home')}}">Home</a></li>
+{{-- 								<li><a href="generic.html">Generic</a></li>
 								<li><a href="elements.html">Elements</a></li>
 								<li>
 									<span class="opener">Submenu</span>
@@ -73,10 +71,9 @@
 								</li>
 								<li><a href="#">Maximus Erat</a></li>
 								<li><a href="#">Sapien Mauris</a></li>
-								<li><a href="#">Amet Lacinia</a></li>
+								<li><a href="#">Amet Lacinia</a></li> --}}
 							</ul>
 						</nav>
-
 					<!-- Section -->
 					<section>
 						<header class="major">
@@ -104,17 +101,20 @@
 					<!-- Section -->
 					<section>
 						<header class="major">
-							<h2>Get in touch</h2>
+							<h2>Contactenos</h2>
 						</header>
-						<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 						<ul class="contact">
-							<li class="icon solid fa-envelope"><a href="#">information@untitled.tld</a></li>
-							<li class="icon solid fa-phone">(000) 000-0000</li>
-							<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-							Nashville, TN 00000-0000</li>
+							<li class="icon solid fa-envelope">
+								<a href="@yield('email', 'servicesWeb2020@gmail.com')">@yield('email', 'servicesWeb2020@gmail.com')</a>
+							</li>
+							<li class="icon solid fa-phone">
+								@yield('phone', '+5842495025755')
+							</li>
+							<li class="icon solid fa-home">
+								@yield('address', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae officiis maxime atque')
+							</li>
 						</ul>
 					</section>
-
 				<!-- Footer -->
 					<footer id="footer">
 						<p class="copyright">&copy; Untitled. All rights reserved. Demo Images: <a href="https://unsplash.com">Unsplash</a>. Design: <a href="https://html5up.net">HTML5 UP</a>.</p>

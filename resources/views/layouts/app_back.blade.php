@@ -63,13 +63,13 @@ The above copyright notice and this permission notice shall be included in all c
               <p>Equipo de Trabajo</p>
             </a>
         </li>
-{{--         <li class="nav-item ">
-          <a class="nav-link" href="./typography.html">
+        <li class="nav-item ">
+          <a class="nav-link" href="{{route('settings')}}">
             <i class="material-icons">library_books</i>
-            <p>Typography</p>
+            <p>Configuración</p>
           </a>
         </li>
-        <li class="nav-item ">
+{{--                 <li class="nav-item ">
           <a class="nav-link" href="./icons.html">
             <i class="material-icons">bubble_chart</i>
             <p>Icons</p>
@@ -158,7 +158,10 @@ The above copyright notice and this permission notice shall be included in all c
                   <a class="dropdown-item" href="#">Profile</a>
                   <a class="dropdown-item" href="#">Settings</a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="{{url('logout')}}">Log out</a>
+                  <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button type="submit" class="dropdown-item">Log out</a>
+                  </form>
                 </div>
               </li>
             </ul>

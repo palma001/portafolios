@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Equipment;
+use App\Setting;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -25,7 +26,8 @@ class HomeController extends Controller
     public function index()
     {
         $equipments = Equipment::with('professions')->paginate();
-        return view('home', compact('equipments'));
+        $setting = Setting::first();
+        return view('home', compact('equipments', 'setting'));
     }
     /**
      * Show the application dashboard.
