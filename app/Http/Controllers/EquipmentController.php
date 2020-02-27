@@ -3,10 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Equipment;
+use Spatie\Dropbox\Client;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class EquipmentController extends Controller
 {
+    public function __construct()
+    {
+        // Necesitamos obtener una instancia de la clase Client la cual tiene algunos métodos
+        // que serán necesarios.
+        $this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();   
+    }
     /**
      * Display a listing of the resource.
      *
@@ -36,12 +44,20 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->file('avatar')->store('public');
+        Storage::disk('dropbox')->putFileAs(
+            '/',
+            $request->file('avatar'), 
+            $request->file('avatar')->getClientOriginalName()
+        );
+        $response = $this->dropbox->createSharedLinkWithSettings(
+            $request->file('avatar')->getClientOriginalName(), 
+            ["requested_visibility" => "public"]
+        );
         $equipments = new Equipment;
         $equipments->name = $request->name;
         $equipments->lastname = $request->lastname;
         $equipments->email = $request->email;
-        $equipments->image = $image;
+        $equipments->image = $response['url'];
         $equipments->description = $request->description;
         $equipments->user_created_id = auth()->user()->id;
         $equipments->save();
