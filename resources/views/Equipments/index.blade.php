@@ -34,7 +34,7 @@
 			                  {{$equipment->id}}
 			                </td>
 			                <td>
-			                	<img class="avatars" src="{{$equipment->image}}" alt="image"
+			                	<img class="avatars" src="{{Storage::disk('dropbox')->url($equipment->image)}}" alt="image"
 			                	style="width: 50px; height: 50px; border-radius: 100%;">
 			                </td>
 			                <td>{{$equipment->name}}</td>

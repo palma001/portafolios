@@ -17,7 +17,7 @@ class EquipmentTableSeeder extends Seeder
         		'lastname' => 'Palma',
         		'email' => 'palmaluis1997@gmail.com',
                 'description' => null,
-                'image' => '76247733_1194806240704130_2521537813007040512_o.jpg',
+                'image' => 'luigi-colonna-351099.jpg',
                 'user_created_id' => 1
             ],
             [
@@ -25,7 +25,7 @@ class EquipmentTableSeeder extends Seeder
         		'lastname' => 'Teran',
         		'email' => 'ramonteran@gmail.com',
                 'description' => null,
-                'image' => '0.jpeg',
+                'image' => 'luigi-colonna-351099.jpg',
                 'user_created_id' => 1
             ]
         ]);
