@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Spatie\Dropbox\Client;
 
@@ -14,7 +15,7 @@ class Common extends Model
         $this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();   
     }
 
-	public function upload($image)
+	static function upload($image)
 	{
 		Storage::disk('dropbox')->putFileAs(
             '/',

@@ -10,12 +10,6 @@ use Spatie\Dropbox\Client;
 
 class EquipmentController extends Controller
 {
-    public function __construct()
-    {
-        // Necesitamos obtener una instancia de la clase Client la cual tiene algunos métodos
-        // que serán necesarios.
-        $this->dropbox = Storage::disk('dropbox')->getDriver()->getAdapter()->getClient();   
-    }
     /**
      * Display a listing of the resource.
      *
@@ -54,7 +48,7 @@ class EquipmentController extends Controller
         $equipments->description = $request->description;
         $equipments->user_created_id = auth()->user()->id;
         $equipments->save();
-        return redirect('dashboard/equipments');
+        return redirect('dashboard/equipment');
     }
 
     /**
