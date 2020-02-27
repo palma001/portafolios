@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Equipment;
 use Illuminate\Http\Request;
+use JD\Cloudder\Facades\Cloudder;
 
 class EquipmentController extends Controller
 {
@@ -37,6 +38,7 @@ class EquipmentController extends Controller
     public function store(Request $request)
     {
         $image = $request->file('avatar')->store('public');
+        Cloudder::upload($image);
         $equipments = new Equipment;
         $equipments->name = $request->name;
         $equipments->lastname = $request->lastname;
