@@ -53,6 +53,7 @@ class EquipmentController extends Controller
             $request->file('avatar')->getClientOriginalName(), 
             ["requested_visibility" => "public"]
         );
+        dd($response);
         $equipments = new Equipment;
         $equipments->name = $request->name;
         $equipments->lastname = $request->lastname;
