@@ -47,10 +47,10 @@ class EquipmentController extends Controller
         Storage::disk('dropbox')->putFileAs(
             '/',
             $request->file('avatar'), 
-            $request->file('avatar')->getClientOriginalName()
+            $request->file('avatar')->getRealPath()
         );
         $response = $this->dropbox->createSharedLinkWithSettings(
-            $request->file('avatar')->getClientOriginalName(), 
+            $request->file('avatar')->getRealPath(), 
             ["requested_visibility" => "public"]
         );
         $equipments = new Equipment;
