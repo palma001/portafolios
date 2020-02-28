@@ -35,7 +35,10 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        $nameImg = FunctionsHelpers::upload($request->file('avatar'));
+        $nameImg = '';
+        if ($request->hasFile($request->file('avatar'))) {
+            $nameImg = FunctionsHelpers::upload($request->file('avatar'));
+        }
         $equipments = new Equipment;
         $equipments->name = $request->name;
         $equipments->lastname = $request->lastname;
