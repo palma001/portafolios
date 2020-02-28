@@ -3,9 +3,10 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-lg-12 col-md-12">
-	    <button type="button" rel="tooltip" title="Agregar Usuario" class="btn btn-primary">
+	    <a href="#" rel="tooltip" title="Agregar Usuario" class="btn btn-primary text-white" style="float: right;">
 	        Agregar Usuario
-	    </button>
+	    </a>
+	</div>
     <div class="card">
         <div class="card-header card-header-tabs card-header-primary">
           <div class="nav-tabs-navigation">

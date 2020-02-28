@@ -17,12 +17,22 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::prefix('dashboard')->group(function () {
+	//Dashboard
 	Route::get('/', 'HomeController@dashboard')->name('dashboard');
+	
+	// Users
+	Route::resource('users','UserController');
 	Route::get('/users', 'UsersController@index')->name('users');
+
+	//Equipments
 	Route::resource('equipment','EquipmentController');
 	Route::get('/equipment', 'EquipmentController@index')->name('equipment');
+
+	// Settings
 	Route::resource('setting','SettingController');
 	Route::get('settings', 'SettingController@index')->name('settings');
+
+	//Newsletters
 	Route::resource('newsletter','NewsletterController');
 	Route::get('newsletters', 'NewsletterController@index')->name('newsletters');
 });
