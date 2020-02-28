@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Equipment;
 use App\Helpers\FunctionsHelpers;
 use Illuminate\Http\Request;
+use Helper;
 class EquipmentController extends Controller
 {
     /**
@@ -37,7 +38,7 @@ class EquipmentController extends Controller
     {
         $nameImg = '';
         if ($request->hasFile('avatar')) {
-            $nameImg = FunctionsHelpers::upload($request->file('avatar'));
+            $nameImg = Helpers::upload($request->file('avatar'), '/equipments');
         }
         $equipments = new Equipment;
         $equipments->name = $request->name;

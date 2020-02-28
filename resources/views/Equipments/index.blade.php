@@ -34,12 +34,9 @@
 				                  {{$equipment->id}}
 				                </td>
 				                <td>
-				                	<img class="avatars" src="{{
-				                			
-				                			Storage::disk('dropbox')->exists("equipments/{$equipment->image}") ?
-				                			Storage::disk('dropbox')->url("equipments/{$equipment->image}") :
-				                			Storage::disk('dropbox')->url('undraw_empty_xct9.png')
-
+				                	<img class="avatars" src="
+				                		{{
+				                			Helpers::validImage("equipments/{$equipment->image}")
 				                		}}"
 				                		alt="image"
 				                		style="width: 50px; height: 50px; border-radius: 100%;">

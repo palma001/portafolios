@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Setting;
 use Illuminate\Http\Request;
+use Helpers;
 
 class SettingController extends Controller
 {
@@ -71,8 +72,8 @@ class SettingController extends Controller
     public function update(Request $request, $id)
     {
         $setting = Setting::first();
-        $favicon = $request->hasFile('favicon') ? $request->file('favicon')->store('public') : $setting->favicon;
-        $image_page = $request->hasFile('image_page') ? $request->file('image_page')->store('public') : $setting->image_page;
+        $favicon = $request->hasFile('favicon') ? Helpers::upload($request->file('favicon'), 'settings/favicon') : $setting->favicon;
+        $image_page = $request->hasFile('image_page') ? Helpers::upload($request->file('image_page'), 'settings/image_page') : $setting->image_page;
         Setting::where('id', $id)
         ->update([
             'title_page' => $request->title_page,

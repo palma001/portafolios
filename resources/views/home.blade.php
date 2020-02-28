@@ -1,6 +1,6 @@
 @extends('layouts.app_front')
 @section('title', $setting->header_title)
-@section('favicon', Storage::url($setting->favicon))
+@section('favicon', Helpers::validImage("/settings/favicon/{$setting->favicon}"))
 @section('facebook', $setting->facebook_link)
 @section('twitter', $setting->twitter_link)
 @section('instagram', $setting->instagram_link)
@@ -29,7 +29,7 @@
             </p>
         </div>
         <span class="image object">
-            <img src="{{ Storage::url($setting->image_page)}}" alt="" style="max-height: 400px;" />
+            <img src="{{ Helpers::validImage("/settings/image_page/{$setting->image_page}") }}" alt="" style="max-height: 400px;" />
         </span>
     </section>
 
