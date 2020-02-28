@@ -9,7 +9,7 @@ class FunctionsHelpers
 {    
     public static function upload($file)
     {
-        $nameImge = Str::random(40);
+        $nameImge = Str::random(40) + $file->getClientOriginalExtension();
         Storage::disk('dropbox')->putFileAs(
             '/equipments',
             $file,
