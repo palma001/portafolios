@@ -25,7 +25,7 @@ class EquipmentTableSeeder extends Seeder
         		'lastname' => 'Teran',
         		'email' => 'ramonteran@gmail.com',
                 'description' => null,
-                'image' => 'luigi-colonna-351099.jpg',
+                'image' => '0.jpeg',
                 'user_created_id' => 1
             ]
         ]);
