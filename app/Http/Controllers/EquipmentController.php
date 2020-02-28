@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 use App\Equipment;
 use App\Helpers\FunctionsHelpers;
-use Illuminate\Http\Request;
+use App\Setting;
 use Helper;
+use Illuminate\Http\Request;
 class EquipmentController extends Controller
 {
     /**
@@ -59,7 +60,9 @@ class EquipmentController extends Controller
      */
     public function show($id)
     {
-        //
+        $equipment = Equipment::with('professions')->find($id);
+        $setting = Setting::first();
+        return view('showEquipment', compact('equipment', 'setting'));
     }
 
     /**

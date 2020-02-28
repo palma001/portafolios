@@ -9,7 +9,7 @@
 		<title>@yield('title')</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets_front/css/main.css" />
+		<link rel="stylesheet" href="{{URL::asset('assets_front/css/main.css') }}" />
 		<link rel="icon" href="@yield('favicon')" type="image/x-icon"/>
 	</head>
 	<body class="is-preload">
@@ -130,10 +130,10 @@
 			</div>
 		</div>
 		<!-- Scripts -->
-		<script src="assets_front/js/jquery.min.js"></script>
-		<script src="assets_front/js/browser.min.js"></script>
-		<script src="assets_front/js/breakpoints.min.js"></script>
-		<script src="assets_front/js/util.js"></script>
-		<script src="assets_front/js/main.js"></script>
+		<script src="{{URL::asset('assets_front/js/jquery.min.js')}}"></script>
+		<script src="{{URL::asset('assets_front/js/browser.min.js')}}"></script>
+		<script src="{{URL::asset('assets_front/js/breakpoints.min.js')}}"></script>
+		<script src="{{URL::asset('assets_front/js/util.js')}}"></script>
+		<script src="{{URL::asset('assets_front/js/main.js')}}"></script>
 	</body>
 </html>

@@ -15,13 +15,14 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/equipment/{id}', 'EquipmentController@show');
 
 Route::prefix('dashboard')->group(function () {
 	//Dashboard
 	Route::get('/', 'HomeController@dashboard')->name('dashboard');
 	
 	// Users
-	Route::resource('users','UserController');
+	Route::resource('users','UsersController');
 	Route::get('/users', 'UsersController@index')->name('users');
 
 	//Equipments

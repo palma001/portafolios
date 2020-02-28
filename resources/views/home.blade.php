@@ -84,7 +84,7 @@
                     <h3>{{ strtoupper($equipment->name) }} {{ strtoupper($equipment->lastname) }}</h3>
                     <p>{{ $equipment->description }}</p>
                     <ul class="actions">
-                        <li><a href="#" class="button">More</a></li>
+                        <li><a href="equipment/{{$equipment->id}}" class="button">More</a></li>
                     </ul>
                 </article>
             @endforeach
