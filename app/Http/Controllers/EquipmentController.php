@@ -1,13 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use App\Common;
 use App\Equipment;
+use App\Helpers\FunctionsHelpers;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
-use Spatie\Dropbox\Client;
-
 class EquipmentController extends Controller
 {
     /**
@@ -39,12 +35,13 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        $nameImg = Common::upload($request->file('avatar'));
+        $helper = new FunctionsHelpers;
+        $nameImg = $helper->upload($request->file('avatar'));
         $equipments = new Equipment;
         $equipments->name = $request->name;
         $equipments->lastname = $request->lastname;
         $equipments->email = $request->email;
-        $equipments->image = nameImg['name'];
+        $equipments->image = $nameImg['name'];
         $equipments->description = $request->description;
         $equipments->user_created_id = auth()->user()->id;
         $equipments->save();
