@@ -15,7 +15,7 @@ class SettingTableSeeder extends Seeder
         	[
         		'title_page' => 'Servicio Web',
         		'subtitle_page' => null,
-        		'description_page' => null,
+        		'description_page' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique dolores eum mollitia aperiam temporibus sed accusantium maxime inventore cum earum quaerat repudiandae explicabo, assumenda voluptate perferendis, alias eveniet perspiciatis voluptas.',
         		'image_page' => 'Iumj3JNjybo9qz4uNmwdDJmBEDk9WIjCfiNeQVp8.jpeg',
         		'header_title' => 'Services web',
         		'favicon' => 'Iumj3JNjybo9qz4uNmwdDJmBEDk9WIjCfiNeQVp8.jpeg',
