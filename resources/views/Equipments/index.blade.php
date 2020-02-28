@@ -37,7 +37,7 @@
 				                	<img class="avatars" src="{{
 				                			
 				                			Storage::disk('dropbox')->exists("equipments/{$equipment->image}") ?
-				                			Storage::disk('dropbox')->url($equipment->image) :
+				                			Storage::disk('dropbox')->url("equipments/{$equipment->image}") :
 				                			Storage::disk('dropbox')->url('undraw_empty_xct9.png')
 
 				                		}}"
