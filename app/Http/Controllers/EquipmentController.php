@@ -35,13 +35,12 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        $helper = new FunctionsHelpers;
-        $nameImg = $helper->upload($request->file('avatar'));
+        $nameImg = FunctionsHelpers::upload($request->file('avatar'));
         $equipments = new Equipment;
         $equipments->name = $request->name;
         $equipments->lastname = $request->lastname;
         $equipments->email = $request->email;
-        $equipments->image = $nameImg['name'];
+        $equipments->image = $nameImg;
         $equipments->description = $request->description;
         $equipments->user_created_id = auth()->user()->id;
         $equipments->save();
