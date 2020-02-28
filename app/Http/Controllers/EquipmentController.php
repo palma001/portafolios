@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Equipment;
-use App\Helpers\FunctionsHelpers;
 use App\Setting;
-use Helper;
+use Helpers;
 use Illuminate\Http\Request;
 class EquipmentController extends Controller
 {
