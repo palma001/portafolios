@@ -79,7 +79,7 @@
             @foreach($equipments as $equipment)
                 <article>
                     <a href="#" class="image">
-                        <img src="{{Storage::url($equipment->image)}}" alt="" style="width: 320px; height: 320px; border-radius: 100%; margin: auto" />
+                        <img src="{{ Helpers::validImage("equipments/{$equipment->image}") }}" alt="" style="width: 320px; height: 320px; border-radius: 100%; margin: auto" />
                     </a>
                     <h3>{{ strtoupper($equipment->name) }} {{ strtoupper($equipment->lastname) }}</h3>
                     <p>{{ $equipment->description }}</p>
