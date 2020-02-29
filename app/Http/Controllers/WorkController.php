@@ -42,7 +42,7 @@ class WorkController extends Controller
         $work->title = $request->title;
         $work->showHome = $request->showHome;
         $work->link = $request->link;
-        $work->start_date = $request->strat_date;
+        $work->start_date = $request->start_date;
         $work->end_date = $request->end_date;
         $work->description = $request->description;
         $work->image = $image;
