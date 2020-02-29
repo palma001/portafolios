@@ -36,37 +36,23 @@
     <!-- Section -->
     <section>
         <header class="major">
-            <h2>Erat lacinia</h2>
+            <h2>Trabajos realizados</h2>
         </header>
         <div class="features">
-            <article>
-                <span class="icon fa-gem"></span>
-                <div class="content">
-                    <h3>Portitor ullamcorper</h3>
-                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                </div>
-            </article>
-            <article>
-                <span class="icon solid fa-paper-plane"></span>
-                <div class="content">
-                    <h3>Sapien veroeros</h3>
-                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                </div>
-            </article>
-            <article>
-                <span class="icon solid fa-rocket"></span>
-                <div class="content">
-                    <h3>Quam lorem ipsum</h3>
-                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                </div>
-            </article>
-            <article>
-                <span class="icon solid fa-signal"></span>
-                <div class="content">
-                    <h3>Sed magna finibus</h3>
-                    <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
-                </div>
-            </article>
+            @foreach($works as $work)
+                <article>
+                    <a class="image icon">
+                        <img src="{{ Helpers::validImage("/works/{$work->image}") }}"
+                            alt=""
+                            style="width: 120px; height: 113px; border-radius: 100%; margin: 30px auto"
+                        />
+                    </a>
+                    <div class="content">
+                        <h3>{{$work->title}}</h3>
+                        <p>{{$work->description}}<p>
+                    </div>
+                </article>
+            @endforeach
         </div>
     </section>
 

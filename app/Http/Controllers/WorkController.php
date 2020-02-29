@@ -37,7 +37,6 @@ class WorkController extends Controller
      */
     public function store(Request $request)
     {
-        $image = $request->hasFile('image') ? Helpers::upload($request->file('image'), '/works') : '';
         $work = new Work;
         $work->title = $request->title;
         $work->showHome = $request->showHome;
@@ -45,7 +44,7 @@ class WorkController extends Controller
         $work->start_date = $request->start_date;
         $work->end_date = $request->end_date;
         $work->description = $request->description;
-        $work->image = $image;
+        $work->image = $request->hasFile('image') ? Helpers::upload($request->file('image'), '/works') : '';
         $work->user_created_id = auth()->user()->id;
         $work->save();
         return redirect('dashboard/works');

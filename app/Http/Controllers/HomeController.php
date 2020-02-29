@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Equipment;
 use App\Setting;
+use App\Work;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,7 +28,8 @@ class HomeController extends Controller
     {
         $equipments = Equipment::with('professions')->paginate();
         $setting = Setting::first();
-        return view('home', compact('equipments', 'setting'));
+        $works = Work::all();
+        return view('home', compact('equipments', 'setting', 'works'));
     }
     /**
      * Show the application dashboard.
