@@ -46,6 +46,7 @@ class WorkController extends Controller
         $work->end_date = $request->end_date;
         $work->description = $request->description;
         $work->image = $image;
+        $work->user_created_id = auth()->user()->id;
         $work->save();
         return redirect('dashboard/works');
     }
