@@ -36,4 +36,8 @@ Route::prefix('dashboard')->group(function () {
 	//Newsletters
 	Route::resource('newsletter','NewsletterController');
 	Route::get('newsletters', 'NewsletterController@index')->name('newsletters');
+
+	// Work
+	Route::resource('works','WorkController');
+	Route::get('works', 'WorkController@index')->name('works');
 });

@@ -1,11 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Equipment;
-use App\Setting;
-use Helpers;
+
 use Illuminate\Http\Request;
-class EquipmentController extends Controller
+
+class EquipmentWorkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +13,7 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        $equipments = Equipment::OrderBy('id', 'desc')->paginate(15);
-        return view('Equipments.index', compact('equipments'));
+        //
     }
 
     /**
@@ -25,7 +23,7 @@ class EquipmentController extends Controller
      */
     public function create()
     {
-        return view('Equipments.create');
+        //
     }
 
     /**
@@ -36,19 +34,7 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        $nameImg = '';
-        if ($request->hasFile('avatar')) {
-            $nameImg = Helpers::upload($request->file('avatar'), '/equipments');
-        }
-        $equipments = new Equipment;
-        $equipments->name = $request->name;
-        $equipments->lastname = $request->lastname;
-        $equipments->email = $request->email;
-        $equipments->image = $nameImg;
-        $equipments->description = $request->description;
-        $equipments->user_created_id = auth()->user()->id;
-        $equipments->save();
-        return redirect('dashboard/equipment');
+        //
     }
 
     /**
@@ -59,9 +45,7 @@ class EquipmentController extends Controller
      */
     public function show($id)
     {
-        $equipment = Equipment::with('professions')->find($id);
-        $setting = Setting::first();
-        return view('showEquipment', compact('equipment', 'setting'));
+        //
     }
 
     /**

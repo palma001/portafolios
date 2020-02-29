@@ -16,7 +16,9 @@ class DatabaseSeeder extends Seeder
         	ProfessionTableSeeder::class,
             EquipmentTableSeeder::class,
         	EquipmentProfessionTableSeeder::class,
-            SettingTableSeeder::class
+            SettingTableSeeder::class,
+            WorkTableSeeder::class,
+            EquipmentWorkTableSeeder::class
         ]);
     }
 }

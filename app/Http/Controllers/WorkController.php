@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Equipment;
-use App\Setting;
+
 use Helpers;
+use App\Work;
 use Illuminate\Http\Request;
-class EquipmentController extends Controller
+
+class WorkController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +15,8 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        $equipments = Equipment::OrderBy('id', 'desc')->paginate(15);
-        return view('Equipments.index', compact('equipments'));
+        $works = Work::OrderBy('id', 'desc')->paginate(15);
+        return view('works.index', compact('works'));
     }
 
     /**
@@ -25,7 +26,7 @@ class EquipmentController extends Controller
      */
     public function create()
     {
-        return view('Equipments.create');
+        return view('works.create');
     }
 
     /**
@@ -36,19 +37,17 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        $nameImg = '';
-        if ($request->hasFile('avatar')) {
-            $nameImg = Helpers::upload($request->file('avatar'), '/equipments');
-        }
-        $equipments = new Equipment;
-        $equipments->name = $request->name;
-        $equipments->lastname = $request->lastname;
-        $equipments->email = $request->email;
-        $equipments->image = $nameImg;
-        $equipments->description = $request->description;
-        $equipments->user_created_id = auth()->user()->id;
-        $equipments->save();
-        return redirect('dashboard/equipment');
+        $image = $request->hasFile('image') ? Helpers::upload($request->file('image'), '/works') : '';
+        $work = new Work;
+        $work->title = $request->title;
+        $work->showHome = $request->showHome;
+        $work->link = $request->link;
+        $work->strat_date = $request->strat_date;
+        $work->end_date = $request->end_date;
+        $work->description = $request->description;
+        $work->image = $image;
+        $work->save();
+        return redirect('dashboard/works');
     }
 
     /**
@@ -59,9 +58,7 @@ class EquipmentController extends Controller
      */
     public function show($id)
     {
-        $equipment = Equipment::with('professions')->find($id);
-        $setting = Setting::first();
-        return view('showEquipment', compact('equipment', 'setting'));
+        //
     }
 
     /**
