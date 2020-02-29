@@ -36,7 +36,7 @@
 				                <td>
 				                	<img class="avatars" src="
 				                		{{
-				                			Helpers::validImage("equipments/{$work->image}")
+				                			Helpers::validImage("works/{$work->image}")
 				                		}}"
 				                		alt="image"
 				                		style="width: 50px; height: 50px; border-radius: 100%;">
