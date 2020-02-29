@@ -36,7 +36,7 @@
     <!-- Section -->
     <section>
         <header class="major">
-            <h2>Trabajos realizados</h2>
+            <h2>Trabajos Realizados</h2>
         </header>
         <div class="features">
             @foreach($works as $work)
