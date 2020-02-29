@@ -28,7 +28,7 @@ class HomeController extends Controller
     {
         $equipments = Equipment::with('professions')->paginate();
         $setting = Setting::first();
-        $works = Work::all();
+        $works = Work::OrderBy('id', 'desc')->get();
         return view('home', compact('equipments', 'setting', 'works'));
     }
     /**
