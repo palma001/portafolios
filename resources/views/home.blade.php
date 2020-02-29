@@ -42,11 +42,11 @@
             @foreach($works as $work)
                 @if($work->showHome)
                     <article>
-                        <a class="image icon">
+                        <span class="image icon">
                             <img src="{{ Helpers::validImage("/works/{$work->image}") }}"
-                                style="width: 110px; height: 110px; border-radius: 100%; margin: 35px auto"
+                                style="width: 110px; height: 110px; border-radius: 100%; margin: 30px auto"
                             />
-                        </a>
+                        </span>
                         <div class="content">
                             <h3>{{$work->title}}</h3>
                             <p>{{$work->description}}<p>
