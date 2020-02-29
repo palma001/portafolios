@@ -44,7 +44,6 @@
                     <article>
                         <a class="image icon">
                             <img src="{{ Helpers::validImage("/works/{$work->image}") }}"
-                                alt=""
                                 style="width: 100px; height: 100px; border-radius: 100%; margin: 35px auto"
                             />
                         </a>
