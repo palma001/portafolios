@@ -45,7 +45,7 @@
                         <a class="image icon">
                             <img src="{{ Helpers::validImage("/works/{$work->image}") }}"
                                 alt=""
-                                style="width: 120px; height: 113px; border-radius: 100%; margin: 30px auto"
+                                style="width: 100px; height: 100px; border-radius: 100%; margin: 35px auto"
                             />
                         </a>
                         <div class="content">
