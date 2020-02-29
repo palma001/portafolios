@@ -40,18 +40,20 @@
         </header>
         <div class="features">
             @foreach($works as $work)
-                <article>
-                    <a class="image icon">
-                        <img src="{{ Helpers::validImage("/works/{$work->image}") }}"
-                            alt=""
-                            style="width: 120px; height: 113px; border-radius: 100%; margin: 30px auto"
-                        />
-                    </a>
-                    <div class="content">
-                        <h3>{{$work->title}}</h3>
-                        <p>{{$work->description}}<p>
-                    </div>
-                </article>
+                @if($work->showHome)
+                    <article>
+                        <a class="image icon">
+                            <img src="{{ Helpers::validImage("/works/{$work->image}") }}"
+                                alt=""
+                                style="width: 120px; height: 113px; border-radius: 100%; margin: 30px auto"
+                            />
+                        </a>
+                        <div class="content">
+                            <h3>{{$work->title}}</h3>
+                            <p>{{$work->description}}<p>
+                        </div>
+                    </article>
+                @endif
             @endforeach
         </div>
     </section>
