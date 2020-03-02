@@ -42,14 +42,31 @@
             @foreach($works as $work)
                 @if($work->showHome)
                     <article>
-                        <span class="image icon">
-                            <img src="{{ Helpers::validImage("/works/{$work->image}") }}"
-                                style="width: 110px; height: 110px; border-radius: 100%; margin: 30px auto"
-                            />
-                        </span>
-                        <div class="content">
-                            <h3>{{$work->title}}</h3>
-                            <p>{{$work->description}}<p>
+                        <div class="row">
+                            <div class="col-12">
+                                <a href="{{$work->link}}">
+                                    <h3>{{$work->title}}</h3>
+                                </a>
+                            </div>
+                            <div class="col-3">
+                                <img src="{{ Helpers::validImage("/works/{$work->image}") }}" class="img-work"/>
+                            </div>
+                            <div class="col-9">
+                                <div class="">
+                                    <p>{{ substr($work->description, 0, 251) }}<p>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                @if(count($work->equipments) > 0)
+                                    <strong>Creadores:
+                                        @foreach($work->equipments as $equipment)
+                                            <a href="equipment/{{$equipment->id}}">
+                                                {{ $equipment->name }} {{ $equipment->lastname }},
+                                            </a>
+                                        @endforeach
+                                    </strong>
+                                @endif
+                            </div>
                         </div>
                     </article>
                 @endif
@@ -78,4 +95,12 @@
         </div>
     </section>
 @endsection
+<style>
+    .img-work {
+        width: 100%;
+        height: 72%;
+        border-radius: 5px;
+        margin-top: 7px;
+    }
+</style>
 <!-- Banner -->

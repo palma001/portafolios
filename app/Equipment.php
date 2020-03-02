@@ -13,4 +13,9 @@ class Equipment extends Model
     	return $this->belongsToMany(Profession::class, 'equipment_professions', 'profession_id', 'id')
     	->using(EquipmentProfession::class);
     }
+    public function works()
+    {
+    	return $this->belongsToMany(Work::class, 'equipment_works', 'work_id', 'id')
+    	->using(EquipmentWork::class);
+    }
 }
